@@ -1,0 +1,148 @@
+.woocommerce div.product .stock,
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price {
+    color: #24199F;
+}
+
+.woocommerce span.onsale,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt {
+    background-color: $color__secondary;
+}
+
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover {
+    background-color: #a90000;
+}
+
+.woocommerce ul.products li.product .price del {
+    color: #cc2a2a;
+}
+
+.woocommerce span.onsale {
+	padding: 0;
+}
+
+.single-product {
+
+	.custom-under-atc {
+		clear: both;
+		padding-top:.5em;
+
+		a {
+			display: inline-block;
+			color: #999;
+			border: 1px solid #ccc;
+			font-weight: 700;
+			padding: 1em 2em .75em;
+
+			&:hover,
+			&:focus {
+				color: #000;
+				background-color: #f7f7f7;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.price:before {
+		content: 'Good Fortune Jewelry\'s Pre-Owned Price:  ';
+	}
+
+	.product_cat-new-price .price:before {
+		content: 'Good Fortune Jewelry\'s New Price: ';
+	}
+
+	.woocommerce-Price-amount.amount {
+		font-weight: 700;
+	}
+
+	div.product {
+		position: relative;
+
+		.woocommerce-product-gallery {
+			position: relative;
+			float: left;
+
+			.woocommerce-product-gallery__trigger {
+				position: absolute;
+				top: 2em;
+				right: 1em;
+				display: block;
+				z-index: 99;
+			}
+
+			.flex-viewport {
+				margin-bottom: 1em;
+			}
+
+			.flex-control-thumbs {
+				margin: 0;
+				padding: 0;
+
+				li {
+					list-style: none;
+					cursor: pointer;
+					float: left;
+
+					img {
+						opacity: 0.5;
+
+						&.flex-active {
+							opacity: 1;
+						}
+					}
+
+					&:hover {
+
+						img {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			@for $i from 2 through 5 {
+
+				&.woocommerce-product-gallery--columns-#{$i} {
+
+					.flex-control-thumbs {
+
+						li {
+
+							@include column-width($i);
+
+							&:nth-child(#{$i}n) {
+								margin-right: 0;
+							}
+
+							&:nth-child(#{$i}n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.stock {
+
+	&:empty::before {
+		display: none;
+	}
+
+	&.in-stock {
+		color: $woocommerce__color-success;
+	}
+
+	&.out-of-stock {
+		color: $woocommerce__color-error;
+	}
+}

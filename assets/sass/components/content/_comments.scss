@@ -1,0 +1,129 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+
+.comments-area {
+	padding: 1.5em 0;
+	@include clearfix;
+
+	.comments-title {
+		text-transform: uppercase;
+		@include font-size(18);
+	}
+}
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	margin: 2.5em 0;
+	@include clearfix;
+}
+
+.comment-content {
+	clear: both;
+}
+
+.entry-comments .comment-author {
+	margin-bottom: 0;
+}
+
+.comment-respond {
+
+	input:focus {
+		border: 0;
+	}
+
+	.comment-reply-title {
+		margin-bottom: .5em;
+		text-transform: uppercase;
+		@include font-size(24);
+
+		small {
+			display: block;
+		}
+	}
+
+	#cancel-comment-reply-link {
+		padding: .5em 0 .5em .75em;
+		position: relative;
+		width: auto;
+		@include font-size(14);
+
+		&:hover {
+			background-color: $color__base-xxlight;
+		}
+
+		&:before {
+			content: 'x';
+			position: absolute;
+			left: 0;
+			top: .5em;
+		}
+	}
+}
+
+.comment-list {
+	margin-bottom: 1em;
+}
+
+.comment-list li,
+.ping-list li {
+	list-style-type: none;
+}
+
+.comment-list li {
+	background-color: #ffffff;
+	box-shadow: 0px 0px 8px rgba(153,153,153,0.15);
+	border-radius: 12px;
+	margin-top: 24px;
+	padding: 32px;
+	width: 100%;
+
+	@include breakpoint(tablet-v) {
+		padding: 16px;
+		@include font-size(14);
+	}
+	@include breakpoint(phone-v) {
+		padding: 12px;
+	}
+
+	li {
+		background-color: $color__base-xxlight;
+		li {
+			background-color: #ffffff;
+			li {
+				background-color: $color__base-xxlight;
+				li {
+					background-color: #ffffff;
+				}
+			}
+		}
+	}
+}
+
+.comment-form {
+	.comment-form-comment,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		margin-bottom: 0;
+	}
+}
+
+.comment-form-cookies-consent label {
+	margin-left: 12px;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+
+.comment-edit-link,
+.says {
+	display: none;
+}

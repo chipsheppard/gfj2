@@ -1,0 +1,162 @@
+.main-navigation {
+	position: relative;
+	margin-top: 1rem;
+
+	@include breakpoint(tablet-min-h) {
+		display: flex;
+		align-items: center;
+	}
+
+	.menu-wrap {
+		position: relative;
+	}
+
+	ul {
+		line-height: 0;
+		margin: 0;
+		padding: 0;
+
+		ul {
+			display: block;
+		}
+	}
+
+	li {
+		display: inline-block;
+		margin-right: 1rem;
+		position: relative;
+
+		&:hover > .sub-menu,
+		&.focus > .sub-menu {
+			left: auto;
+			opacity: 1;
+		}
+		&:nth-last-of-type(1) {
+			margin-right: 0;
+		}
+	}
+
+	a {
+		color: $color__base;
+		display: inline-block;
+		letter-spacing: 1px;
+		padding: .875rem .25rem 1.5rem;
+		position: relative;
+		@include font-size(14);
+
+		&:before {
+			border-bottom: 1px solid currentColor;
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			opacity: 0;
+			width: 0%;
+			transition: all 0.125s ease-in;
+		}
+	}
+
+	a:hover,
+    &:focus {
+		text-decoration: none;
+	}
+
+	a:hover:before,
+	.current_page_ancestor > a:before,
+	.current-menu-ancestor > a:before,
+	.current_page_item > a:before,
+	.current-menu-item > a:before {
+		opacity: .5;
+		width: 100%;
+	}
+
+	// Parent Tics
+	.menu-item-has-children > a {
+		padding-right: 1rem;
+		padding-bottom: 1rem;
+
+		&:after {
+			content: '';
+			display: inline-block;
+			position: relative;
+			top: -3px;
+			right: -9px;
+			width: 6px;
+			height: 6px;
+			border-style: solid;
+			border-width: 0 1px 1px 0;
+			transform: rotate(45deg);
+			transition: all .05s ease-in;		
+		}
+	}
+
+
+
+	// sub-menu
+	.sub-menu {
+		display: block;
+		left: -9999px;
+		margin: -1px 0 0;
+		opacity: 0;
+		padding: 0;
+		position: absolute;
+		text-align: left;
+		top: 100%;
+		transition: all .05s ease-in;
+		width: 190px;
+		z-index: 2;
+
+		a {
+			background:#ffffff;
+			border: 0;
+			color: $color__base;
+			line-height: 1.375;
+			padding: .75rem 1.125rem;
+			text-transform: none;
+			transition: all .05s ease-in-out;
+			width: 100%;
+			@include font-size(13);
+
+			&:hover,
+			&:focus {
+				background:#f3f3f3;
+			}
+			&:before {
+				display: none;
+			}
+		}
+
+		.current_page_item > a,
+		.current-menu-item > a {
+			background:#f3f3f3;
+		}
+
+		li {
+			border-bottom: 1px solid $color__base-xlight;
+			border-left: 1px solid $color__base-xlight;
+			border-right: 1px solid $color__base-xlight;
+			margin-right: 0;
+			width: 100%;
+
+			&:first-of-type {
+				border-top: 1px solid $color__base-xlight;
+			}
+		}
+
+		.sub-menu {
+			margin: -14% 0 0 92%;
+		}
+	}
+
+	// Parent Tic
+	.sub-menu .menu-item-has-children > a {
+		&:after {
+			position: absolute;
+			top: calc( 50% - 2px );
+			right: 22px;
+			border-width: 1px 1px 0 0;
+		}
+	}
+}

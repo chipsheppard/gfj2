@@ -1,0 +1,55 @@
+@media screen and (min-width: 768px) {
+
+	.col2-set {
+
+		.form-row-first {
+			float: left;
+			margin-right: $columns__margin;
+		}
+
+		.form-row-last {
+			float: right;
+			margin-right: 0;
+		}
+
+		.form-row-first,
+		.form-row-last {
+
+			@include column-width(2);
+		}
+	}
+}
+
+.woocommerce-checkout-payment {
+	ul>li {
+		list-style: none;
+	}
+
+	input[type=text] {
+		width: auto;
+		padding: .125em;
+	}
+} 
+
+.woocommerce form.checkout .form-row .woocommerce-terms-and-conditions-wrapper {
+	.woocommerce-terms-and-conditions-checkbox-text {
+		display: inline-block;
+		margin-left: 1.75em;
+	}
+	.woocommerce-form__label-for-checkbox {
+		display: block;
+		line-height: 1.2;
+		position: relative;
+
+		.required {
+			position: absolute;
+			left: 16px;
+			top: 2px;
+		}
+	}
+
+	.woocommerce-form__input-checkbox {
+		position: absolute;
+		top: 5px;
+	}
+}

@@ -1,0 +1,142 @@
+.blog,
+.archive,
+.search {
+
+	.flex-wrap {
+		justify-content: stretch;
+	}
+
+	article {
+		background-color: #ffffff;
+		border: 1px solid $color__base-xlight;
+		margin-bottom: 2em;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+
+		// 3 COLS - Greater than or equal to 1025
+		@include breakpoint(tablet-min-h) {
+			float: left;
+			margin-right: 2%;
+			width: calc( 32% );
+
+			&:nth-of-type(odd) {
+				margin-right: 2%;
+			}
+            &:nth-of-type(even) {
+				margin-right: 2%;
+			}
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+		}
+		// 2 COLS - was phone-min-h
+		@include breakpoint(tablet-min-v) {
+			float: left;
+			margin-right: 4%;
+			width: calc( 48% );
+
+			&:nth-of-type(odd) {
+				clear: both;
+				margin-right: 4%;
+			}
+            &:nth-of-type(even) {
+				margin-right: 0;
+			}
+		}
+
+
+		.wp-post-image {
+			display: block;
+			height: 200px;
+			width: 100%;
+			object-fit: cover;
+
+			@include breakpoint(phone-min-v) {
+				height: 300px;
+			}
+		}
+
+		.entry-header {
+			overflow: hidden;
+			padding: .75rem 1rem .5rem;
+		}
+
+		.entry-content {
+			overflow: hidden;
+			padding: 0 1rem 1rem;
+		}
+
+		.link-more {
+			line-height: 2.5;
+			overflow: hidden;
+		}
+
+		&.format-aside,
+		&.format-status {
+			.entry-content {
+				padding-top: 16px;
+			}
+		}
+
+		&.sticky {
+			border-top:2px solid $color__highlight;
+		}
+	}
+
+	.format-status .entry-content p {
+		margin-bottom: 1em;
+	}
+
+	.entry-title {
+		word-break: break-word;
+		line-height: 1.125;
+		margin-bottom: .25em;
+		@include font-size(24); 
+
+		a {
+			color: $color__base;
+			display: inline-block;
+
+			&:hover,
+			&:focus {
+				color: $color__secondary;
+			}
+		}
+	}
+}
+
+/*
+.featured-image {
+	transition: scale 0.25s ease-in-out;
+
+	&:hover {
+		transform: scale(1.15,1.15);
+		transition: scale 0.25s ease-in-out;
+	}
+}
+*/
+
+.archive-description {
+	line-height: 1.2;
+}
+
+/* READ MORE LINKS */
+.more-link {
+	border: 1px solid currentColor;
+	display: inline-block;
+	line-height: 1;
+	padding: 1.125em 1.75em 1em;
+	position: relative;
+	text-transform: uppercase;
+	@include font-size(12);
+
+	&:hover,
+	&:focus {
+		border-color: $color__base;
+		color: $color__base;
+		background-color: rgba( 204, 204, 204, .1)
+	}
+}

@@ -1,0 +1,182 @@
+@use "sass:color";
+@use "sass:math";
+
+/**
+ * Font Size Converter - px to em
+ * ---
+ * 16px -> 1em
+ */
+
+@mixin font-size( $sizeValue: 1.6 ) {
+  font-size: math.div( $sizeValue, 16 ) + rem;
+}
+
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - calc( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+
+// Clearfix (no old IE support cause why)
+@mixin clearfix {
+	clear: both;
+	&::after {
+	  display: block;
+	  clear: both;
+	  content: ' ';
+	}
+}
+
+// Visually Hidden
+@mixin visuallyhidden {
+	position: absolute;
+	border: 0 none;
+	margin: -1px;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	white-space: nowrap;
+	overflow: hidden;
+	clip: rect( 0 0 0 0 );
+  
+	// Allow focus
+	&.focusable:active,
+	&.focusable:focus {
+	  position: static;
+	  margin: 0;
+	  width: auto;
+	  height: auto;
+	  white-space: inherit;
+	  overflow: visible;
+	  clip: auto;
+	}
+}
+
+// Mimic 'background-size: cover' on a
+// block. Parent el needs position relative.
+@mixin block-fit-cover( $min-width: 100em ) {
+	display: block;
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+	right: -9999px;
+	bottom: -9999px;
+	margin: auto;
+	width: 100%;
+	min-width: $min-width;
+	user-drag: none;
+	user-select: none;
+	z-index: 1;
+  
+	@supports ( object-fit: cover ) {
+	  object-fit: cover;
+	  left: 0;
+	  top: 0;
+	  right: auto;
+	  bottom: auto;
+	  width: 100%;
+	  height: 100%;
+	  min-width: 0;
+	}
+}
+
+@mixin list-reset() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  
+  @mixin nav-item-reset() {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+  }
+  
+  @mixin link-reset() {
+	text-decoration: none;
+	cursor: pointer;
+  
+	&:hover,
+	&:focus {
+	  text-decoration: none;
+	}
+  }
+  
+  @mixin button-reset() {
+	@include link-reset();
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 0;
+	border: 0 none;
+	text-align: center;
+	background-color: transparent;
+	transition: color 300ms, background 300ms;
+  }
+  
+  @mixin button( $color_default, $color_hover: false ) {
+	@if ( not $color_hover ) {
+	  $color_hover: color.scale( $color_default, $lightness: -30% );
+	}
+  
+	@include button-reset();
+	border-radius: 25px;
+	padding: .875rem 3rem;
+	color: #fff;
+	font-weight: 700;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background: $color_default;
+	@include font-size(15);
+  
+	&:hover,
+	&:focus {
+	  color: #fff;
+	  background: $color_hover;
+	}
+}
+
+
+// Media Queries
+// http://gs.statcounter.com/screen-resolution-stats
+@mixin breakpoint($point) {
+
+	@if $point == site-max {
+		@media all and (max-width: 1280px) { @content; }
+	}
+	@if $point == tablet-h {
+		@media all and (max-width: 1024px) { @content; }
+	}
+	@if $point == tablet-min-h {
+		@media all and (min-width: 1025px) { @content; }
+	}
+	@if $point == tablet-m {
+		@media all and (max-width: 900px) { @content; }
+	}
+	@if $point == tablet-v {
+		@media all and (max-width: 768px) { @content; } // device is less than or equal to... apply styles
+	}
+	@if $point == tablet-min-v {
+		@media all and (min-width: 769px) { @content; } // device is greater than or equal to... apply styles
+	}
+	@if $point == phone-h {
+		@media all and (max-width: 640px) { @content; }
+	}
+	@if $point == phone-min-h {
+		@media all and (min-width: 641px) { @content; }
+	}
+	@if $point == phone-v {
+		@media all and (max-width: 380px) { @content; }
+	}
+	@if $point == phone-min-v {
+		@media all and (min-width: 381px) { @content; }
+	}
+}

@@ -1,0 +1,79 @@
+.entry-title {
+	margin: 0;
+
+	a {
+		color: $color__base;
+
+		&:hover,
+		&:focus {
+			color: $color__highlight-dark;
+		}
+	}
+}
+
+.page-title {
+	margin: 0;
+
+	div {
+		text-transform: uppercase;
+		@include font-size(16);
+	}
+}
+
+body.page .entry-header,
+body.single .entry-header,
+body.blog .page-header,
+body.archive .page-header,
+body.error404 .page-header {
+	margin-bottom: 2em;
+}
+
+body.page .entry-title,
+body.single .entry-title,
+body.blog .page-title,
+body.archive .page-title,
+body.search .page-title,
+body.error404 .page-title {
+	letter-spacing: 1px;
+	padding: 0;
+	line-height: 1;
+	word-break: break-word;
+
+	//@include breakpoint(phone-h) {
+	//	@include font-size(18);
+	//}
+}
+
+body.archive:not(.woocommerce) .page-title {
+	@include font-size(18);
+
+	span {
+		display: block;
+		@include font-size(40);
+	}
+}
+
+
+body.home h1.entry-title {
+	display: none;
+}
+body.home.page .entry-header {
+	margin-bottom: 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.single {
+	.hentry {
+		margin-bottom: 6em;
+	}
+	.entry-content {
+		margin-bottom: 2em;
+	}
+	.entry-footer {
+		border-bottom: 1px dashed $color__base-xlight;
+	}
+}

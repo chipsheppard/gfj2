@@ -1,0 +1,116 @@
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
+
+blockquote,
+.wp-block-quote {
+	background: rgba(153,153,153,0.05);
+	border: none;
+	margin: .75em 0 1.5em;
+	padding: 1.5em 1.75em;
+	position: relative;
+	quotes: "\201C""\201D""\201C""\201D";
+
+	@include breakpoint(phone-h) {
+		padding: 1.25em;
+	}
+
+	&:after {
+		content: '';
+	}
+
+	&:before {
+		background-color: rgba(153,153,153,0.2);
+		content:'';
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 8px;
+	}
+
+	cite {
+		display: block;
+		font-weight: $font__weight-bold;
+		font-style: normal;
+		line-height: 1.25;
+		margin-top: .5em;
+		text-transform: uppercase;
+		@include font-size(14);
+
+		&:before {
+			content: '';
+			width: 2.5em;
+			height: .25em;
+			margin-right: 1em;
+			border-top: 1px solid $color__base;
+			display: inline-block;
+		}
+
+		span {
+			font-weight: $font__weight-normal;
+			@include font-size(12);
+		}
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	&.alignwide,
+	&.alignfull {
+		border: none;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	&.alignleft {
+		margin: 0 1.5em 1.5em 0;
+	}
+	&.alignright {
+		margin: 0 0 1.5em 1.5em;
+	}
+
+	&.is-large,
+	&.is-style-large {
+		margin: .75em 0 1.5em;
+		padding: 1.5em 1.75em 1.5em 2em;
+		position: relative;
+		
+		&:before {
+			content: "\201C";
+			font-family: Georgia, serif;
+			color: $color__base-light;
+			height: 0;
+			top: -4px;
+			left: 4px;
+			@include font-size(60);
+		}
+	
+		p {
+			font-style: normal;
+			line-height: 1.4;
+			@include font-size(24);
+		}
+	}
+}
+
+/*
+ * BLOCK EDITOR SPECIFIC
+ ---------------------------------------------- */
+ .editor-styles-wrapper .wp-block-quote.is-style-large {
+	.rich-text {
+		padding-left: .5em;
+	}
+	.wp-block-quote__citation {
+		text-align: right;
+	}
+}

@@ -1,0 +1,151 @@
+.site-header {
+	display: none;
+	position: relative;
+	width: 100%;
+
+	@include breakpoint(tablet-min-h) {
+		display: block;
+	}
+
+	.inner-wrap {
+		z-index: 3;
+	}
+}
+
+.header-flex-wrap {
+	@include breakpoint(tablet-min-h) {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-content: center;
+
+		.menu-left {
+			width: 40%
+		}
+		.site-branding {
+			width: 20%; 
+			text-align: center;
+		}
+		.menu-right { width: 40%;
+			.main-navigation {
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
+	}
+}
+
+.site-branding {
+	display: table-cell;
+	text-align: left;
+	vertical-align: middle;
+	transition: all .5s ease;
+
+	@include breakpoint(tablet-min-h) {
+		display:block;
+	}
+
+	a {
+		display: inline-block;
+		line-height: 1;
+	}
+}
+
+.custom-logo {
+	line-height: 1;
+	display: block;
+	max-width: 180px !important;
+	height: auto;
+	transition: max-height 0.2s;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+
+	&:hover {
+		opacity: 0.75;
+	}
+}
+
+.header-search {
+	margin-top: 1em;
+	@include clearfix;
+}
+
+.site-title {
+    font-weight: 700;
+	line-height: 1;
+	margin: 0;
+	@include font-size(32);
+
+	a {
+		color: $color__base;
+		display:inline-block;
+		text-decoration: none;
+
+		&:hover {
+			opacity: 0.75;
+		}
+	}
+}
+
+.site-description {
+	color: $color__base;
+	letter-spacing: 1px;
+	line-height: 1;
+	padding-top: .5em;
+}
+
+.header-bar {
+	background-color: #000;
+	color: #fff;
+	padding: .25em 0;
+
+	a {
+		color: #fff;
+	}
+
+	.headerbar-left {
+		text-align: center;
+		
+		a {
+			color: $color__base-light;
+			margin-right: .5em;
+
+			&:hover {
+				color: $color__base-xxlight;
+			}
+		}
+
+		@include breakpoint(tablet-min-v) {
+			width: 33.3333%;
+			text-align: left;
+		}
+	}
+
+	.headerbar-mid {
+		text-align: center;
+		padding: .5em 0;
+		@include font-size(14);
+
+		@include breakpoint(tablet-min-v) {
+			align-self: center;
+			width: 33.3333%;
+			padding: 0;
+		}
+	}
+
+	.headerbar-right {
+		text-align: center;
+
+		@include breakpoint(tablet-min-v) {
+			width: 33.3333%;
+			text-align: right;
+			align-self: center;
+		}
+		.wc-block-mini-cart__button	{
+			padding: 0;
+		}	
+	}
+}

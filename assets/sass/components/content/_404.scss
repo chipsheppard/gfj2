@@ -1,0 +1,44 @@
+.error404 {
+    .content-area {
+        text-align: center;
+        padding-bottom: 12em;
+    }
+
+    .search-form {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .error-message {
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 3s;
+        animation-duration: 3s;
+        -webkit-animation-name: hinge;
+        animation-name: hinge;
+        display: inline-block;
+        position: absolute;
+        top: 100px;
+        left: calc( 50% - 160px );
+        z-index: 99;
+        @include font-size(30);
+    }
+}
+
+@-webkit-keyframes hinge {
+    0% { -webkit-transform: rotate(0); -webkit-transform-origin: center center; -webkit-animation-timing-function: ease-in-out; }
+    30%, 60% { -webkit-transform: rotate(40deg); -webkit-transform-origin: center center; -webkit-animation-timing-function: ease-in-out; }
+    60% { -webkit-transform: rotate(-20deg); -webkit-transform-origin: center center; -webkit-animation-timing-function: ease-in-out; }
+    90% { -webkit-transform: rotate(10deg) translateY(0); opacity: 1; -webkit-transform-origin: center center; -webkit-animation-timing-function: ease-in-out; }
+    100% { -webkit-transform: translateY(400px); opacity: 0; }
+}
+@keyframes hinge {
+    0% { transform: rotate(0); transform-origin: center center; animation-timing-function: ease-in-out; }
+    30%, 60% { transform: rotate(40deg); transform-origin: center center; animation-timing-function: ease-in-out; }
+    60% { transform: rotate(-20deg); transform-origin: center center; animation-timing-function: ease-in-out; }
+    90% { transform: rotate(10deg) translateY(0); opacity: 1; transform-origin: center center; animation-timing-function: ease-in-out; }
+    100% { transform: translateY(400px); opacity: 0; }
+}

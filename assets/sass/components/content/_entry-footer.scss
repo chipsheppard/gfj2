@@ -1,0 +1,34 @@
+.entry-footer {
+	border-top: 1px dashed $color__base-xlight;
+	// border-bottom: 1px dashed $color__base-xlight;
+	color: $color__base-light;
+	padding: .5rem 1rem;
+	@include font-size(12);
+
+	a {
+		color: $color__base-medium;
+
+		&:hover {
+			color: currentColor;
+			opacity: .75;
+		}
+	}
+}
+
+.cat-links,
+.tags-links {
+	display: inline;
+	padding: 5px 5px 5px 0;
+}
+
+.cat-links {
+	margin-right: .5em;
+}
+
+.edit-link {
+	float: right;
+
+	a {
+		display: inline-block;
+	}
+}

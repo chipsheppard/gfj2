@@ -1,0 +1,26 @@
+.entry-meta {
+	color: $color__base-light;
+	display: inline-block;
+	line-height: 1.25;
+	@include font-size(12);
+
+	a {
+		color: $color__base-medium;
+
+		&:hover {
+			color: currentColor;
+			opacity: .75;
+		}
+	}
+
+	.posted-on,
+	.updated-on,
+	.byline,
+	.comments-link {
+		display: inline-block;
+		padding-right: .75em;
+	}
+}
+.single .entry-meta {
+	margin-top: 12px;
+}

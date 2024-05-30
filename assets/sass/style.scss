@@ -1,0 +1,145 @@
+/*!
+Theme Name: Good Fortune Jewelry V3
+Theme URI: http://underscores.me/
+Author: Chip Sheppard
+Author URI: https://sheppco.com
+Description: Custom Theme built from Underscores.
+Version: 1.0.0
+Tested up to: 6.5.2
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl.html
+Text Domain: good-fortune-jewelry
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+This theme is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Abstracts
+	- Mixins
+	- Variables
+	- Columns
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	  - - Setup
+	  - - Copy
+	  - - Headings
+	- Elements
+	  - - Blockquotes
+	  - - Body
+	  - - hr
+	  - - Links
+	  - - Lists
+	  - - Media
+	  - - Tables
+# Forms
+	- Buttons
+	- Fields
+	- Search
+# Components
+	- Global
+	  - - site-header
+	  - - site-footer
+	- Navigation
+	  - - links
+	  - - menus
+	  - - icon
+	  - - mobile
+	  - - postnav
+	  - - pagination
+	- Content
+	  - - posts-and-pages
+	  - - entries
+	  - - post-formats
+	  - - entry-meta
+	  - - entry-footer
+	  - - archives
+	  - - search
+	  - - 404
+	  - - comments
+	  - - widgets
+	- Media
+	  - - smiley
+	  - - captions
+      - - galleries
+      - - avatar
+# Layouts
+	- Containers
+# Modules
+	- CSS Icons
+# plugins
+	- Jetpack
+	  - - Infinite Scxroll
+	- Woo Commerce
+	  - - Products
+	  - - Single Product
+	  - - Components
+	  - - Checkout
+	  - - Tables
+	  - - Widgets
+	- Contact Form 7
+# Utilities
+	- Accessibility
+	- Alignments
+	- Block Editor
+	- IE
+
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+@import "generic/normalize";
+@import "generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/base";
+
+/*--------------------------------------------------------------
+# Formss
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+@import "layouts/layouts";
+
+/*--------------------------------------------------------------
+# Moduless
+--------------------------------------------------------------*/
+@import "modules/modules";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+@import "plugins/plugins";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+@import "utilities/utilities";

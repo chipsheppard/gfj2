@@ -1,0 +1,51 @@
+.home {
+
+    .woocommerce ul.products li.product {
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .wp-block-kadence-column {
+
+        p {
+            @include breakpoint(tablet-min-v) {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+        }
+
+        .wpcf7-form-control-wrap {
+            margin-right: 10px;
+            flex-grow: 1;
+        }
+
+        input[type="email"] {
+            margin: 0;
+        }
+
+        input[type="submit"] {
+            height: 48px;
+            margin-top: 1em;
+
+            @include breakpoint(tablet-min-v) {
+                margin: 0;
+            }
+        }
+    }
+
+    .entry-content-wrap {
+        .entry-footer {
+            border: 0;
+            padding: 0;
+        }
+    }
+
+    .wp-block-kadence-posts {
+        article {
+            border: 1px solid $color__base-xlight;
+        }
+    }
+}

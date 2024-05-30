@@ -1,0 +1,204 @@
+.site-footer {
+	clear: both;
+	background-color: #000;
+	color: #fff;
+	padding: 4rem 2rem 2rem;
+	@include font-size(13);
+
+	ul {
+		margin-left: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		margin-bottom: .75em;
+	}
+
+	.foot-row1 {
+		margin-bottom: 5em;
+	}
+	.foot-row2 {
+		margin-bottom: 1em;
+	}
+	.foot-row3 {
+		margin-bottom: 1em;
+
+		@include breakpoint(tablet-min-v) {
+			align-items: center;
+		}
+	}
+
+	.widget {
+		a {
+			color: #fff;
+			line-height: 1.2;
+
+			&:hover,
+			&:focus {
+				color:  $color__base-light;
+			}
+		}
+	}
+
+	.foot-row1-1 {
+		@include font-size(15);
+		margin-bottom: 3em;
+
+		h5 {
+			font-family: $font__main;
+			font-weight: 400;
+			margin-bottom: .5em;
+			@include font-size(24);
+		}
+
+		h4 {
+			margin-top: .5em;
+			@include font-size(42);
+		}
+
+		@include breakpoint(tablet-min-v) {
+			width: 50%;
+			padding-right: 2em;
+		}
+	}
+
+	.foot-row1-2 {
+		margin-bottom: 3em;
+
+		h4 {
+			@include font-size(42);
+		}
+
+		input[type=text],
+		input[type=email],
+		textarea {
+			background-color: #222;
+			border-color: #999;
+			color: #fff;
+		}
+
+		.wpcf7-form p {
+			margin: 0;
+		}
+
+		@include breakpoint(tablet-min-v) {
+			width: 50%;
+		}
+	}
+
+	.foot-row2-1 {
+		margin-bottom: 3em;
+		text-align: center;
+
+		img {
+			width: 100%;
+			margin-bottom: 1em;
+			max-width: 188px !important;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	  
+		@include breakpoint(tablet-min-v) {
+			width: 100%;
+		}
+
+		@include breakpoint(tablet-min-h) {
+			width: 24%;
+			margin-right: 4%;
+			text-align: left;
+
+			img {
+				max-width: none !important;
+			}
+		}
+	}
+
+	.foot-row2-2 {
+		margin-bottom: 3em;
+		text-align: center;
+
+		@include breakpoint(tablet-min-v) {
+			width: 25%;
+			text-align: left;
+			padding-right: 1em;
+		}
+		@include breakpoint(tablet-min-h) {
+			width: 18%;
+		}
+
+	}
+
+	.foot-row2-3 {
+		margin-bottom: 3em;
+		text-align: center;
+
+		@include breakpoint(tablet-min-v) {
+			width: 25%;
+			text-align: left;
+			padding-right: 1em;
+		}
+		@include breakpoint(tablet-min-h) {
+			width: 18%;
+		}
+	}
+
+	.foot-row2-4 {
+		margin-bottom: 3em;
+		text-align: center;
+
+		@include breakpoint(tablet-min-v) {
+			width: 25%;
+			text-align: left;
+			padding-right: 1em;
+		}
+		@include breakpoint(tablet-min-h) {
+			width: 18%;
+		}
+	}
+
+	.foot-row2-5 {
+		text-align: center;
+		margin-bottom: 3em;
+		
+		@include breakpoint(tablet-min-v) {
+			width: 25%;
+			text-align: left;
+		}
+		@include breakpoint(tablet-min-h) {
+			width: 18%;
+		}
+	}
+
+	.foot-row3-1 {
+		text-align: center;
+
+		@include breakpoint(tablet-min-v) {
+			width: 50%;
+			padding-right: 1em;
+			text-align: left;
+		}
+	}
+
+	.foot-row3-2 {
+		color: $color__base-light;
+		padding: 1rem 0;
+		text-align: center;
+		position: relative;
+
+		a {
+			color: $color__base-light;
+			margin-right: .5em;
+
+			&:hover {
+				color: $color__base-xxlight;
+			}
+		}
+		
+		@include breakpoint(tablet-min-v) {
+			width: 50%;
+			text-align: right;
+		}
+	}
+
+}

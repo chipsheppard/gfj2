@@ -1,0 +1,159 @@
+.custom-header {
+	background: #f3f5f7;
+	background: $color__base; // linear-gradient(90deg, $color__highlight 0%, $color__secondary 100%);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	//min-height: 240px;
+
+	#custom-header-block {
+		height: 100%;
+	}
+
+	.custom-header-image {
+		padding: 0;
+		height: 100%;
+	    width: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		overflow: hidden;
+		
+        img {
+            object-fit: cover;
+			object-position: center center;
+        	width: 100%;
+            height: 100%;
+			opacity: .4;
+			position: absolute;
+        }
+	}
+	
+	
+	// Homepage only
+	.custom-header-media {
+		position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    width: 100%;
+	    height: 100%;
+	    overflow: hidden;
+
+		img {
+			display: none;
+			height: 100%;
+		}
+
+		video, iframe {
+			width: auto;
+			height: auto;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		    z-index: 1;
+		    min-width: 100%;
+		    min-height: 100%;
+		}
+	}
+}
+
+// Home Hero
+.custom-header-text-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	min-height: calc( 100% - 104px ); // match height of .home .site-header on _site-header.scss
+	margin: 104px auto 0;
+	max-width: $size__site-max;
+	text-align: center;
+	width: 100%;
+	z-index: 5;
+}
+
+.custom-header-text {
+	color: #ffffff;
+	max-width: 800px;
+	padding: 1rem 2rem;
+}
+
+.hero-primary,
+.hero-secondary {
+	a {
+		color: currentColor;
+		border-bottom: 1px solid currentColor;
+
+		&:hover {
+			opacity: .8;
+		}
+
+		&.btn {
+			border: none;
+			margin-top: 1em;
+			@include font-size(1.25);
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.hero-primary {
+	line-height: 1.25;
+	margin-bottom: .25em;
+	@include font-size(48);
+
+	@include breakpoint(tablet-v) {
+		@include font-size(32);
+	}
+}
+
+.hero-secondary {
+	line-height: 1.25;
+	@include font-size(24);
+
+	@include breakpoint(tablet-v) {
+		@include font-size(18);
+	}
+}
+
+
+// Sub Psge banners
+.banner {
+	width: 100%;
+	height: 100%;
+  
+	.inner-wrap {
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+}
+  
+.banner-title {
+	position: relative;
+	z-index: 10;
+	margin-bottom: 1.5rem;
+  
+	.h1 {
+		margin: 0;
+		display: block;
+		color: #fff;
+		font-family: $font-heading;
+		font-weight: 700;
+		text-align: center;
+		@include font-size(32);
+  
+		@include breakpoint(tablet-v) {
+			@include font-size(28);
+		}
+	}
+}
+  

@@ -1,0 +1,41 @@
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;
+    margin: 0 0 1rem;
+	font-family: $font__heading;
+
+	a {
+		color: $color__base;
+		display: inline-block;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__secondary;
+		}
+	}
+}
+
+h1 {@include font-size(40);}   // 40
+h2 {@include font-size(32);}     // 32
+h3 {@include font-size(28);}  // 28
+h4 {@include font-size(24);}   // 24
+h5 {@include font-size(22);} // 22
+h6 {@include font-size(18);} // 18
+
+@include breakpoint(tablet-v) {
+	h1 {@include font-size(38);}  // 38
+	h2 {@include font-size(30);} // 30
+	h3 {@include font-size(26);} // 26
+	h4 {@include font-size(22);} // 22
+	h5 {@include font-size(20);}  // 20
+	h6 {@include font-size(16);}     // 16
+}
+
+@include breakpoint(phone-h) {
+	h1 {@include font-size(36);}  // 36
+	h2 {@include font-size(28);}  // 28
+	h3 {@include font-size(24);}   // 24
+	h4 {@include font-size(20);}  // 20
+	h5 {@include font-size(18);} // 18
+}
