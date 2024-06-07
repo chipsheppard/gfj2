@@ -247,6 +247,7 @@ i{
 
 address{
   margin:0 0 1.5em;
+  font-style:normal;
 }
 
 pre{
@@ -2987,6 +2988,26 @@ table.shop_table_responsive tr td.download-actions .button{
   top:5px;
   width:auto;
   z-index:100000;
+}
+.vh{
+  position:absolute;
+  border:0 none;
+  margin:-1px;
+  padding:0;
+  height:1px;
+  width:1px;
+  white-space:nowrap;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+}
+.vh.focusable:active, .vh.focusable:focus{
+  position:static;
+  margin:0;
+  width:auto;
+  height:auto;
+  white-space:inherit;
+  overflow:visible;
+  clip:auto;
 }
 #primary[tabindex="-1"]:focus{
   outline:0;
