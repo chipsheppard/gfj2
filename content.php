@@ -8,6 +8,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+	echo '<a href="' . esc_url( get_permalink() ) . '">';
+	the_post_thumbnail(
+		'thumbnail',
+		array(
+			'class' => 'featured-image',
+			'title' => 'Feature image',
+		)
+	);
+	echo '</a>';
+	?>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header>
