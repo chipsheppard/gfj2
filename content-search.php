@@ -13,7 +13,7 @@
 <?php
 	echo '<a href="' . esc_url( get_permalink() ) . '">';
 	the_post_thumbnail(
-		'thumbnail',
+		'large',
 		array(
 			'class' => 'featured-image',
 			'title' => 'Feature image',
